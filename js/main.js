@@ -6,6 +6,7 @@ require.config({
 		text: 				'libs/require-text-2.1.2',
 		json:				'libs/require-json-0.3.0',
 		jquery: 			'libs/jquery-1.10.1.min',
+		functions: 			'libs/functions',
 		jqmrouter: 			'libs/jquery.mobile.router-0.9.3.min',
 		jqmobile: 			'libs/jquery.mobile-1.3.1.min',
 		lodash: 			'libs/lodash-1.2.1.min',
@@ -20,6 +21,9 @@ require.config({
 		jquery: {
 			exports: '$'
 		},
+	    functions: {
+	    	deps: ['jqmrouter' ]
+	    },
 	    jqmrouter: {
 	    	deps: ['app_pre_jqm_init' ]
 	    },
@@ -47,13 +51,13 @@ require.config({
 
 
 //must load 'app/pre_jqm_init' & 'jqmrouter' before 'jqmobile'
-define(['jquery', 'jqmrouter', 'app_pre_jqm_init', 'jqmobile', 'lodash', 'backbone', 'marionette'], 
+define(['jquery', 'functions', 'jqmrouter', 'app_pre_jqm_init', 'jqmobile', 'lodash', 'backbone', 'marionette'], 
 	function () {		         
 		require(['app/app', 'app/routing', 'app/page_landing', 'app/page_about', 'app/page_login', 'app/helper'], 
 			function () {
 				$(function () {
 					JQMM.App.start();
-				});				
+				});
 			}
 		);
 		return JQMM ;

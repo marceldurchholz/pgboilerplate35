@@ -10,7 +10,17 @@ $( document ).bind( "mobileinit", function() {
 	//console.log ('mobileinit')
 	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
-	    
+	
+	if (isMobile.any()) {
+		// change native things...
+		alert('mobile device');
+		StatusBar.overlaysWebView(false);
+		StatusBar.styleLightContent();
+		StatusBar.show();
+	} else  {
+		alert('desktop device');
+	}
+
     $.mobile.jqmRouter={
     	firstMatchOnly: true
     };
