@@ -21,19 +21,47 @@ $( document ).bind( "mobileinit", function() {
 		// alert('desktop device');
 	}
 
+	/* iOS */
+    // $('textarea').unbind('focusout');
+    $('textarea').unbind('blur');
+	$("textarea").on('blur', 'textarea', function() {
+		$(window).scrollTop(10);
+		$(window).scrollTop(0);
+		var footer = $("#footer_message");
+		console.log(footer);
+		footer.css({ "top": footer.position().top, "bottom": "auto"});
+	});
+
     $('textarea').unbind('focusout');
     $(document).on('focusout', 'textarea', function() {
+		$(window).scrollTop(10);
+		$(window).scrollTop(0);
+		var footer = $("#footer_message");
+
+		footer.css({ "top": footer.position().top, "bottom": "auto"});
         setTimeout(function() {
             window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
+			var footer = $("#footer_message");
+
+			footer.css({ "top": footer.position().top, "bottom": "auto"});
         }, 500);
     });
     $('textarea').unbind('focusin');
     $(document).on('focusin', 'textarea', function() {
+		$(window).scrollTop(10);
+		$(window).scrollTop(0);
+		var footer = $("#footer_message");
+
+		footer.css({ "top": footer.position().top, "bottom": "auto"});
         setTimeout(function() {
             window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
+			var footer = $("#footer_message");
+
+			footer.css({ "top": footer.position().top, "bottom": "auto"});
         }, 500);
     });
 	
+
     $.mobile.jqmRouter={
     	firstMatchOnly: true
     };
