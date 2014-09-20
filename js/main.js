@@ -77,3 +77,4 @@ function loadCss(url) {
 }
 
 loadCss ('js/libs/jquery.mobile-1.3.1.min.css');
+loadCss ('js/libs/layouthacks.css');
