@@ -12,7 +12,6 @@ require.config({
 		lodash: 			'libs/lodash-1.2.1.min',
 		backbone: 			'libs/backbone-1.0.0.min',
 		marionette: 		'libs/backbone.marionette-1.0.3.min',
-
 		app_pre_jqm_init:	'app/pre_jqm_init',
 		
 		},
@@ -50,18 +49,23 @@ require.config({
 });
 
 
-//must load 'app/pre_jqm_init' & 'jqmrouter' before 'jqmobile'
-define(['jquery', 'functions', 'jqmrouter', 'app_pre_jqm_init', 'jqmobile', 'lodash', 'backbone', 'marionette'], 
-	function () {		         
-		require(['app/app', 'app/routing', 'app/page_landing', 'app/page_about', 'app/page_videos', 'app/page_message', 'app/page_login', 'app/helper'], 
-			function () {
-				$(function () {
-					JQMM.App.start();
-				});
+//must load 'functions' at the very beginning
+define(['functions'], 
+	function (functions) {
+		require(['jquery', 'jqmrouter', 'app_pre_jqm_init', 'jqmobile', 'lodash', 'backbone', 'marionette'], 
+			function () {		         
+				require(['app/app', 'app/routing', 'app/page_landing', 'app/page_about', 'app/page_videos', 'app/page_message', 'app/page_login', 'app/helper'], 
+					function () {
+						$(function () {
+							JQMM.App.start();
+						});
+					}
+				);
+				return JQMM ;
 			}
 		);
-		return JQMM ;
-});
+	}
+);
 
 
 /*

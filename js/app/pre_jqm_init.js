@@ -21,6 +21,19 @@ $( document ).bind( "mobileinit", function() {
 		// alert('desktop device');
 	}
 
+    $('textarea').unbind('focusout');
+    $(document).on('focusout', 'textarea', function() {
+        setTimeout(function() {
+            window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
+        }, 500);
+    });
+    $('textarea').unbind('focusin');
+    $(document).on('focusin', 'textarea', function() {
+        setTimeout(function() {
+            window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
+        }, 500);
+    });
+	
     $.mobile.jqmRouter={
     	firstMatchOnly: true
     };
