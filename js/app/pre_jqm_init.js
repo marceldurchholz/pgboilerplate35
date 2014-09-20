@@ -25,6 +25,7 @@ $( document ).bind( "mobileinit", function() {
     // $('textarea').unbind('focusout');
     $('textarea').unbind('blur');
 	$("textarea").on('blur', 'textarea', function() {
+		console.log('blur');
 		$(window).scrollTop(10);
 		$(window).scrollTop(0);
 		var footer = $("#footer_message");
@@ -34,26 +35,29 @@ $( document ).bind( "mobileinit", function() {
 
     $('textarea').unbind('focusout');
     $(document).on('focusout', 'textarea', function() {
+		console.log('focusout');
 		$(window).scrollTop(10);
 		$(window).scrollTop(0);
 		var footer = $("#footer_message");
-
 		footer.css({ "top": footer.position().top, "bottom": "auto"});
         setTimeout(function() {
+			console.log('focusout B');
             window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
 			var footer = $("#footer_message");
 
 			footer.css({ "top": footer.position().top, "bottom": "auto"});
         }, 500);
     });
+
     $('textarea').unbind('focusin');
     $(document).on('focusin', 'textarea', function() {
+		console.log('focusin');
 		$(window).scrollTop(10);
 		$(window).scrollTop(0);
 		var footer = $("#footer_message");
-
 		footer.css({ "top": footer.position().top, "bottom": "auto"});
         setTimeout(function() {
+			console.log('focusin B');
             window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
 			var footer = $("#footer_message");
 
