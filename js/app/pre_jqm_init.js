@@ -13,12 +13,12 @@ $( document ).bind( "mobileinit", function() {
 	
 	if (isMobile.any()) {
 		// change native things...
-		alert('mobile device');
+		// alert('mobile device');
 		StatusBar.overlaysWebView(false);
 		StatusBar.styleLightContent();
 		StatusBar.show();
 	} else  {
-		alert('desktop device');
+		// alert('desktop device');
 	}
 
     $.mobile.jqmRouter={
