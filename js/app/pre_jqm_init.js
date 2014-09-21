@@ -12,11 +12,17 @@ $( document ).bind( "mobileinit", function() {
 	$.mobile.allowCrossDomainPages = true;
 	
 	if (isMobile.any()) {
-		// change native things...
-		// alert('mobile device');
-		StatusBar.overlaysWebView(false);
-		StatusBar.styleLightContent();
-		StatusBar.show();
+		document.addEventListener('deviceready', function () {
+			// change native things...
+			// alert('mobile device');
+			StatusBar.overlaysWebView(false);
+			StatusBar.styleLightContent();
+			StatusBar.show();
+			// $(document.body).height(window.innerHeight);
+			document.body.height(window.innerHeight);
+			alert('a');
+		}, false);
+
 	} else  {
 		// alert('desktop device');
 	}
