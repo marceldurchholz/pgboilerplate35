@@ -25,7 +25,7 @@ $( document ).bind( "mobileinit", function() {
 	}
 
 	/* iOS */
-    $('atextarea').unbind('focusin');
+    $('textarea').unbind('focusin');
     $(document).on('focusin', 'textarea', function() {
 		console.log('focusin');
         setTimeout(function() {
@@ -38,7 +38,7 @@ $( document ).bind( "mobileinit", function() {
 		// $(window).scrollTop(0);
     });
 	
-    $('atextarea').unbind('focusout');
+    $('textarea').unbind('focusout');
     $(document).on('focusout', 'textarea', function() {
 		console.log('focusout');
 		$(window).scrollTop(0);
@@ -55,7 +55,7 @@ $( document ).bind( "mobileinit", function() {
 		*/
     });
 
-    $('atextarea').unbind('blur');
+    $('textarea').unbind('blur');
 	$("textarea").on('blur', 'textarea', function() {
 		console.log('blur');
 		$(window).scrollTop(0);

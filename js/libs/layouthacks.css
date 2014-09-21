@@ -1,7 +1,11 @@
+/*
 *:not(input) {
-	-webkit-user-select: none; /*stops selections – except for inputs*/
-	-ms-user-select : none; /* ie 10.0 version */
+	// stops selections – except for inputs
+	-webkit-user-select: none; 
+	// ie 10.0 version
+	-ms-user-select : none; 
 }
+*/
 div.ui-checkbox label.ui-focus {
 	box-shadow: none;
 }
