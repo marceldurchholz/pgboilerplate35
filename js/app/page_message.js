@@ -10,7 +10,7 @@ function (App, Helper, contentTmpl, headerTmpl, footerTmpl){
 			panelView: 		Helper.newPanelView(),			
 			headerView: 	Helper.newHeaderView({name:_pageName, template: _.template(headerTmpl, {}) }),
 			contentView: 	Helper.newContentView({name:_pageName, template: _.template(contentTmpl, {}) }),
-			footerView: 	Helper.newFooterView({name:_pageName, template: _.template(footerTmpl, {}) }),
+			// footerView: 	Helper.newFooterView({name:_pageName, template: _.template(footerTmpl, {}) }),
 		});
 							
 		App.addInitializer(function(options){
