@@ -8,7 +8,7 @@ require.config({
 		jquery: 			'libs/jquery-1.10.1.min',
 		functions: 			'libs/functions',
 		jqmrouter: 			'libs/jquery.mobile.router-0.9.3.min',
-		jqmobile: 			'libs/jquery.mobile-1.3.1.min',
+		jqmobile: 			'libs/jquery.mobile-1.3.2.min',
 		lodash: 			'libs/lodash-1.2.1.min',
 		backbone: 			'libs/backbone-1.0.0.min',
 		marionette: 		'libs/backbone.marionette-1.0.3.min',
@@ -80,5 +80,5 @@ function loadCss(url) {
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 
-loadCss ('js/libs/jquery.mobile-1.3.1.min.css');
+loadCss ('js/libs/jquery.mobile-1.3.2.min.css');
 loadCss ('js/libs/layouthacks.css');
