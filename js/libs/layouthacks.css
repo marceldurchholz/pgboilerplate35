@@ -68,7 +68,10 @@ only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
 }
 
-#header_landing {
+#textmsg {
 	border:10px solid red;
+	position:fixed;
+	top:auto;
+	bottom:0px;
 }
 

@@ -11,17 +11,17 @@ $( document ).bind( "mobileinit", function() {
 	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
 	
+	document.addEventListener('deviceready', function () {
+		$(document.body).height(window.innerHeight);
+		// document.body.height(window.innerHeight);
+		alert('a');
+	}, false);
 	if (isMobile.any()) {
-		document.addEventListener('deviceready', function () {
-			// change native things...
-			// alert('mobile device');
-			StatusBar.overlaysWebView(false);
-			StatusBar.styleLightContent();
-			StatusBar.show();
-			// $(document.body).height(window.innerHeight);
-			document.body.height(window.innerHeight);
-			alert('a');
-		}, false);
+		// change native things...
+		// alert('mobile device');
+		StatusBar.overlaysWebView(false);
+		StatusBar.styleLightContent();
+		StatusBar.show();
 
 	} else  {
 		// alert('desktop device');
