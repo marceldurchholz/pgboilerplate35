@@ -32,9 +32,21 @@ $( document ).bind( "mobileinit", function() {
 			console.log('focusin B');
 			window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
 			var footer = $(".textmsg");
-			console.log(footer.position().top);
-            footer.css({ "height":"120px", "position":"fixed","border":"5px solid red", "top":"auto", "bottom": "60px"});
-        }, 1000);
+			// console.log(footer.position().top);
+            footer.css({ "box-sizing":"border-box", "height":"80px", "position":"fixed","border":"1px solid red", "top":"auto", "bottom": "0px"});
+        }, 500);
+		// $(window).scrollTop(0);
+    });
+   $(document).on('focusout', 'textarea', function() {
+		console.log('focusout');
+        setTimeout(function() {
+			console.log('focusout B');
+			// window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
+			var footer = $(".textmsg");
+			// console.log(footer.position().top);
+            // footer.css({ "box-sizing":"border-box", "height":"80px", "position":"fixed","border":"1px solid red", "top":"auto", "bottom": "0px"});
+			footer.removeAttr('style');
+        }, 500);
 		// $(window).scrollTop(0);
     });
 	
