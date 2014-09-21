@@ -24,8 +24,28 @@ $( document ).bind( "mobileinit", function() {
 	} else  {
 	}
 
+	// if(navigator.userAgent.indexOf("iPhone") > -1 )  {
+		// $('input, textarea').on('focus', function (e) {
+		$(document).on('focusin', 'textarea', function(e) {
+			console.log('on focus');
+			console.log(e);
+			$('[data-role=header],[data-role=footer]').css('position', 'absolute');
+		// }).on('blur', function (e) {
+		}).on('blur', 'textarea', function(e) {
+			console.log('on blur');
+			console.log(e);
+			$('[data-role=header],[data-role=footer]').css('position', 'fixed');
+			//force page redraw to fix incorrectly positioned fixed elements
+			setTimeout( function() {
+				console.log('on blur settimeout');
+				window.scrollTo( $.mobile.window.scrollLeft(), $.mobile.window.scrollTop() );
+			}, 20 );
+		});
+	// }
+	
 	/* iOS */
-    // $('textarea').unbind('focusin');
+    /*
+	// $('textarea').unbind('focusin');
     $(document).on('focusin', 'textarea', function() {
 		console.log('focusin');
         setTimeout(function() {
@@ -33,7 +53,7 @@ $( document ).bind( "mobileinit", function() {
 			window.scrollTo(document.body.scrollLeft, document.body.scrollTop);
 			var footer = $(".textmsg");
 			// console.log(footer.position().top);
-            footer.css({ "box-sizing":"border-box", "height":"80px", "position":"fixed","border":"1px solid red", "top":"auto", "bottom": "0px"});
+            footer.css({ "box-sizing":"border-box", "height":"80px", "position":"fixed","border":"1px solid red", "bottom": "0px", "max-height":"120px" });
         }, 500);
 		// $(window).scrollTop(0);
     });
@@ -49,6 +69,7 @@ $( document ).bind( "mobileinit", function() {
         }, 500);
 		// $(window).scrollTop(0);
     });
+	*/
 	
 
     $.mobile.jqmRouter={
