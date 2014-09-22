@@ -34,6 +34,7 @@ $( document ).bind( "mobileinit", function() {
 			$.mobile.silentScroll($('#header_message').offset().top);
 			// console.log($(document.body).html());
 			console.log($('#page_message').html());
+			$(e.target).css({'top':($(e.target).offset().top)+'px'});
 			setTimeout( function() {
 				console.log(e.target);
 				console.log('setTimeout( function() {...');
@@ -68,6 +69,7 @@ $( document ).bind( "mobileinit", function() {
 		}).on('blur', 'textarea', function(e) {
 			console.log('on blur');
 			console.log(e);
+			$(e.target).removeAttr('style');
 			// $('#footer_message').attr( "class" , $('#footer_message').attr('class_origin') ).removeAttr('class_origin');
 			// $('#footer_message').toolbar( "refresh" );
 			// $('[data-role=footer]').css('position', 'fixed');
