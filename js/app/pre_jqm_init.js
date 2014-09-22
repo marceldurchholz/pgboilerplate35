@@ -31,14 +31,16 @@ $( document ).bind( "mobileinit", function() {
 			console.log(e);
 			console.log($.mobile.window.scrollLeft());
 			console.log($.mobile.window.scrollTop());
-			$(e.target).css({'position':'fixed','bottom':'0px','left':'0px','z-index':'1'});
-			$.mobile.silentScroll($('#header_message').offset().top);
+			$(e.target).css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
+			// $.mobile.silentScroll($('#header_message').offset().top);
 			setTimeout( function() {
+				console.log(e);
+				$('#header_message').css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
+				$(e.target).css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
 				console.log('on focus B');
-				$(e.target).css({'position':'fixed','bottom':'0px','left':'0px','z-index':'1'});
-				console.log($.mobile.window.scrollLeft());
-				console.log($.mobile.window.scrollTop());
-				$.mobile.silentScroll($('#header_message').offset().top);
+				// console.log($.mobile.window.scrollLeft());
+				// console.log($.mobile.window.scrollTop());
+				// $.mobile.silentScroll($('#header_message').offset().top);
 			}, 1000 );
 		// }).on('blur', function (e) {
 		}).on('blur', 'textarea', function(e) {
