@@ -116,3 +116,14 @@ textarea {
 	z-index:888 !important;
 	background-color:#FF0000 !important;
 }
+
+.realFixedFooter {
+	position: fixed !important;
+	left: 0px !important;
+	right: 0px !important;
+	bottom: 0px !important;
+	width:100% !important;
+	height:120px !important;
+	min-height:120px !important;
+	z-index: 999 !important;
+}

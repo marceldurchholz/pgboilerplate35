@@ -27,17 +27,22 @@ $( document ).bind( "mobileinit", function() {
 	// if(navigator.userAgent.indexOf("iPhone") > -1 )  {
 		// $('input, textarea').on('focus', function (e) {
 		$(document).on('focusin', 'textarea', function(e) {
-			console.log('on focus');
+			console.log('on focusin');
 			console.log(e);
 			console.log($.mobile.window.scrollLeft());
 			console.log($.mobile.window.scrollTop());
+			setTimeout( function() {
+				console.log('setTimeout( function() {...');
+				$.mobile.silentScroll($('#header_message').offset().top);
+			}, 1000 );
 			// $(e.target).css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
 			// $('#footer_message').toolbar( "refresh" );
 			// var attrSave = $('#footer_message').attr('class');
-			$('#footer_message').attr( "class_origin" , $('#footer_message').attr('class') ).removeAttr('class');
+			// $('#footer_message').attr( "class_origin" , $('#footer_message').attr('class') ).removeAttr('class');
 			// $('#footer_message').removeAttr('class');
 			// console.log(attrSave);
-			$('#footer_message').addClass('fixedfooter');
+			// $('#footer_message').addClass('fixedfooter');
+			// $('#footerTextarea').focus();
 			// $('#footer_message').css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
 			// $.mobile.silentScroll($('#header_message').offset().top);
 			/*
@@ -55,7 +60,7 @@ $( document ).bind( "mobileinit", function() {
 		}).on('blur', 'textarea', function(e) {
 			console.log('on blur');
 			console.log(e);
-			$('#footer_message').attr( "class" , $('#footer_message').attr('class_origin') ).removeAttr('class_origin');
+			// $('#footer_message').attr( "class" , $('#footer_message').attr('class_origin') ).removeAttr('class_origin');
 			// $('#footer_message').toolbar( "refresh" );
 			// $('[data-role=footer]').css('position', 'fixed');
 			// $(e.target).css('position', 'fixed');
