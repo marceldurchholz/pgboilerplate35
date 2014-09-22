@@ -31,9 +31,15 @@ $( document ).bind( "mobileinit", function() {
 			console.log(e);
 			console.log($.mobile.window.scrollLeft());
 			console.log($.mobile.window.scrollTop());
+			$.mobile.silentScroll($('#header_message').offset().top);
+			console.log($(body.html()));
 			setTimeout( function() {
+				console.log(e.target);
 				console.log('setTimeout( function() {...');
-				$.mobile.silentScroll($('#header_message').offset().top);
+				// console.log($('#header_message').offset().top);
+				$(e.target).css({'position':'fixed','bottom':'0px','left':'0px','z-index':'9999'});
+				// $.mobile.silentScroll($('#header_message').offset().top);
+				console.log($(body.html()));
 			}, 1000 );
 			// $(e.target).css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
 			// $('#footer_message').toolbar( "refresh" );
