@@ -94,11 +94,16 @@ textarea
 }
 
 textarea {
+	/*
 	-webkit-box-sizing: border-box !important;
 	-moz-box-sizing: border-box !important;
 	box-sizing: border-box !important;
+	*/
 	background-color:#ffffff !important;
+	width:100% !important;
+	height:120px !important;
 	min-height:120px !important;
+	z-index:999 !important;
 }
 
 .fixedfooter {
@@ -107,6 +112,7 @@ textarea {
 	bottom:0px !important;
 	width:100% !important;
 	height:120px !important;
-	z-index:9999 !important;
+	min-height:120px !important;
+	z-index:888 !important;
 	background-color:#FF0000 !important;
 }
