@@ -29,17 +29,31 @@ $( document ).bind( "mobileinit", function() {
 		$(document).on('focusin', 'textarea', function(e) {
 			console.log('on focus');
 			console.log(e);
-			$('[data-role=header],[data-role=footer]').css('position', 'absolute');
+			console.log($.mobile.window.scrollLeft());
+			console.log($.mobile.window.scrollTop());
+			$(e.target).css({'position':'fixed','bottom':'0px','left':'0px','z-index':'1'});
+			$.mobile.silentScroll($('#header_message').offset().top);
+			setTimeout( function() {
+				console.log('on focus B');
+				$(e.target).css({'position':'fixed','bottom':'0px','left':'0px','z-index':'1'});
+				console.log($.mobile.window.scrollLeft());
+				console.log($.mobile.window.scrollTop());
+				$.mobile.silentScroll($('#header_message').offset().top);
+			}, 1000 );
 		// }).on('blur', function (e) {
 		}).on('blur', 'textarea', function(e) {
 			console.log('on blur');
 			console.log(e);
-			$('[data-role=header],[data-role=footer]').css('position', 'fixed');
+			// $('[data-role=footer]').css('position', 'fixed');
+			// $(e.target).css('position', 'fixed');
+			$(e.target).removeAttr('style');
 			//force page redraw to fix incorrectly positioned fixed elements
 			setTimeout( function() {
-				console.log('on blur settimeout');
+				console.log('on blur B');
+				console.log($.mobile.window.scrollLeft());
+				console.log($.mobile.window.scrollTop());
 				window.scrollTo( $.mobile.window.scrollLeft(), $.mobile.window.scrollTop() );
-			}, 20 );
+			}, 1000 );
 		});
 	// }
 	

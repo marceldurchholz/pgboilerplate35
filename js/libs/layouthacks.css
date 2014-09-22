@@ -97,4 +97,6 @@ textarea {
 	-webkit-box-sizing: border-box !important;
 	-moz-box-sizing: border-box !important;
 	box-sizing: border-box !important;
+	background-color:#ffffff !important;
+	min-height:120px !important;
 }
