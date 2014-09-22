@@ -31,8 +31,16 @@ $( document ).bind( "mobileinit", function() {
 			console.log(e);
 			console.log($.mobile.window.scrollLeft());
 			console.log($.mobile.window.scrollTop());
-			$(e.target).css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
+			// $(e.target).css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
+			// $('#footer_message').toolbar( "refresh" );
+			// var attrSave = $('#footer_message').attr('class');
+			$('#footer_message').attr( "class_origin" , $('#footer_message').attr('class') ).removeAttr('class');
+			// $('#footer_message').removeAttr('class');
+			// console.log(attrSave);
+			$('#footer_message').addClass('fixedfooter');
+			// $('#footer_message').css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
 			// $.mobile.silentScroll($('#header_message').offset().top);
+			/*
 			setTimeout( function() {
 				console.log(e);
 				$('#header_message').css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
@@ -42,20 +50,25 @@ $( document ).bind( "mobileinit", function() {
 				// console.log($.mobile.window.scrollTop());
 				// $.mobile.silentScroll($('#header_message').offset().top);
 			}, 1000 );
+			*/
 		// }).on('blur', function (e) {
 		}).on('blur', 'textarea', function(e) {
 			console.log('on blur');
 			console.log(e);
+			$('#footer_message').attr( "class" , $('#footer_message').attr('class_origin') ).removeAttr('class_origin');
+			// $('#footer_message').toolbar( "refresh" );
 			// $('[data-role=footer]').css('position', 'fixed');
 			// $(e.target).css('position', 'fixed');
-			$(e.target).removeAttr('style');
+			// $(e.target).removeAttr('style');
 			//force page redraw to fix incorrectly positioned fixed elements
+			/*
 			setTimeout( function() {
 				console.log('on blur B');
 				console.log($.mobile.window.scrollLeft());
 				console.log($.mobile.window.scrollTop());
 				window.scrollTo( $.mobile.window.scrollLeft(), $.mobile.window.scrollTop() );
 			}, 1000 );
+			*/
 		});
 	// }
 	

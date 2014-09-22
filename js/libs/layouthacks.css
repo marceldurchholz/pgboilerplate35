@@ -100,3 +100,13 @@ textarea {
 	background-color:#ffffff !important;
 	min-height:120px !important;
 }
+
+.fixedfooter {
+	position:fixed !important;
+	left:0px !important;
+	bottom:0px !important;
+	width:100% !important;
+	height:120px !important;
+	z-index:9999 !important;
+	background-color:#FF0000 !important;
+}
