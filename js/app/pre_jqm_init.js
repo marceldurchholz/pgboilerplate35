@@ -32,14 +32,16 @@ $( document ).bind( "mobileinit", function() {
 			console.log($.mobile.window.scrollLeft());
 			console.log($.mobile.window.scrollTop());
 			$.mobile.silentScroll($('#header_message').offset().top);
-			console.log($(body.html()));
+			// console.log($(document.body).html());
+			console.log($('#page_message').html());
 			setTimeout( function() {
 				console.log(e.target);
 				console.log('setTimeout( function() {...');
 				// console.log($('#header_message').offset().top);
 				$(e.target).css({'position':'fixed','bottom':'0px','left':'0px','z-index':'9999'});
 				// $.mobile.silentScroll($('#header_message').offset().top);
-				console.log($(body.html()));
+				// console.log($(document.body).html());
+				console.log($('#page_message').html());
 			}, 1000 );
 			// $(e.target).css({'position':'fixed !important','bottom':'0px !important','left':'0px !important','z-index':'9999 !important'});
 			// $('#footer_message').toolbar( "refresh" );
