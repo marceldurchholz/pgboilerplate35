@@ -25,22 +25,43 @@ function doWhenBothFrameworksLoaded() {
 }
 $.when(window.deviceReadyDeferred, window.jqmReadyDeferred).then(doWhenBothFrameworksLoaded);
 
-function keyboardWillShow(e) {
+function isOpen_func(e) {
+	console.log('isOpen_func');
+	console.log(e);
+}
+
+function keyboardWillShow_func(e) {
 	console.log('keyboardWillShow');
 	console.log(e);
+	var is_open = Keyboard.isOpen();
+	console.log(is_open);
+	var height = Keyboard.getHeight();
+	console.log(height);
 }
-function keyboardDidShow(e) {
+function keyboardDidShow_func(e) {
 	console.log('keyboardDidShow');
 	console.log(e);
+	var is_open = Keyboard.isOpen();
+	console.log(is_open);
+	var height = Keyboard.getHeight();
+	console.log(height);
 	iOS_disableScrolling();
 }
-function keyboardWillHide(e) {
+function keyboardWillHide_func(e) {
 	console.log('keyboardWillHide');
 	console.log(e);
+	var is_open = Keyboard.isOpen();
+	console.log(is_open);
+	var height = Keyboard.getHeight();
+	console.log(height);
 }
-function keyboardDidHide(e) {
+function keyboardDidHide_func(e) {
 	console.log('keyboardDidHide');
 	console.log(e);
+	var is_open = Keyboard.isOpen();
+	console.log(is_open);
+	var height = Keyboard.getHeight();
+	console.log(height);
 	iOS_enableScrolling();
 }
 
@@ -75,10 +96,11 @@ $( document ).off( "mobileinit" ).on( "mobileinit", function() {
 		StatusBar.styleLightContent();
 		StatusBar.show();
 		
-		$('body').off('keyboardWillShow').on('keyboardWillShow', keyboardWillShow);
-		$('body').off('keyboardDidShow').on('keyboardDidShow', keyboardDidShow);
-		$('body').off('keyboardWillHide').on('keyboardWillHide', keyboardWillHide);
-		$('body').off('keyboardDidHide').on('keyboardDidHide', keyboardDidHide);
+		$('body').off('keyboardWillShow', keyboardWillShow_func).on('keyboardWillShow', keyboardWillShow_func);
+		$('body').off('isOpen', isOpen_func).on('isOpen', isOpen_func);
+		$('body').off('keyboardDidShow', keyboardDidShow_func).on('keyboardDidShow', keyboardDidShow_func);
+		$('body').off('keyboardWillHide', keyboardWillHide_func).on('keyboardWillHide', keyboardWillHide_func);
+		$('body').off('keyboardDidHide', keyboardDidHide_func).on('keyboardDidHide', keyboardDidHide_func);
 		
 	} else  {
 		alert('oh oh, no mobile device');
