@@ -77,7 +77,7 @@ div.ui-checkbox label.ui-focus {
     -webkit-touch-callout: none;
     -webkit-user-select: none; 
 }
-textarea
+textarea, input 
 {
     -webkit-user-select: auto !important;
 }

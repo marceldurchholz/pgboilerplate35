@@ -65,6 +65,7 @@ function keyboardDidHide_func(e) {
 	iOS_enableScrolling();
 }
 
+/*
 // $(document).ready(function() {
 $( document ).off("pageinit").one( "pageinit", function() {
     // fastButtons.replace();
@@ -74,6 +75,7 @@ $( document ).bind( "pageshow", ".ui-page-active", function() {
 	console.log("bind pageshow");
 	// fastButtons.replace();
 });
+*/
 
 $( document ).off( "mobileinit" ).on( "mobileinit", function() {
 	// Make your jQuery Mobile framework configuration changes here!
