@@ -35,7 +35,7 @@ function showActiveFooter() {
 window.deviceReadyDeferred = $.Deferred();
 window.jqmReadyDeferred = $.Deferred();
 function doWhenBothFrameworksLoaded() {
-	alert('doWhenBothFrameworksLoaded');
+	// alert('doWhenBothFrameworksLoaded');
 	// TBD
 }
 $.when(window.deviceReadyDeferred, window.jqmReadyDeferred).then(doWhenBothFrameworksLoaded);
@@ -86,8 +86,8 @@ function keyboardDidHide_func(e) {
 }
 
 // $(document).ready(function() {
-$( document ).one( "pageinit", function() {
-    fastButtons.replace();
+$( document ).on( "aaa_pageshow", function() {
+	// fastButtons.replaceAttr();
 });
 
 $( document ).bind( "pageshow", ".ui-page-active", function() {
@@ -95,13 +95,24 @@ $( document ).bind( "pageshow", ".ui-page-active", function() {
 	// hideActiveFooter();
 	// showActiveFooter();
 	correctPageSize();
+    // fastButtons.replace();
+	
+	// var attachFastClick = require('fastclick');
+	// attachFastClick(document.body);
 });
+
+window.addEventListener('load', function() {
+    // FastClick.attach(document.body);
+	var attachFastClick = require('fastclick');
+	attachFastClick(document.body);
+}, false);
 
 $( document ).off( "mobileinit" ).on( "mobileinit", function() {
 	// Make your jQuery Mobile framework configuration changes here!
 	//console.log ('mobileinit')
 	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
+	$.mobile.activeBtnClass = "no_BtnSelector";
 	
 	document.addEventListener('deviceready', function () {
 		//$(document.body).height(window.innerHeight);

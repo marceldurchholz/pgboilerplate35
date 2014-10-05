@@ -81,6 +81,41 @@ textarea, input
 {
     -webkit-user-select: auto !important;
 }
+* {
+    a-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+/*
+.ui-btn-active:hover, .ui-btn, .ui-btn-active:focus
+*/
+.ui-btn-active { 
+    /*
+	color: #2F3E46 !important; 
+    background: none !important; 
+    background-color: transparent !important; 
+    text-shadow: 0 0px 0 transparent !important;  
+	border:transparent !important;
+	*/
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;	
+}
+.ui-focus,
+.ui-btn:focus {
+    /*
+	color: #2F3E46 !important; 
+    background: none !important; 
+    background-color: transparent !important; 
+    text-shadow: 0 0px 0 transparent !important;  
+	border:transparent !important;
+	box-shadow: 0 0 0px transparent !important;	
+	*/
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) !important;	
+}
+
+.ui-panel-display-reveal {
+	box-shadow: 0 0px 0px rgba(0, 0, 0, 0) !important;	
+}
+.ui-panel-position.left {
+	background-color:#000000 !important;
+}
 
 .textmsg {
 	z-index:9999;

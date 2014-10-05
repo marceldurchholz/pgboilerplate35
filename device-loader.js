@@ -63,9 +63,5 @@
     var line = src;
     document.writeln(line);
   }
-  function loadCss(src) {
-	var line = '<link rel="stylesheet" href="'+src+'" />';
-    document.writeln(line);
-  }
 
 })();

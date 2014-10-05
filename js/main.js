@@ -9,11 +9,12 @@ require.config({
 		jquery: 			'libs/jquery-1.11.1.min',
 		functions: 			'libs/functions',
 		ios: 				'libs/ios.min',
-		fastclick: 			'libs/jQuery.fastClick',
+		// fastclick: 			'libs/jQuery.fastClick',
+		fastclick: 			'libs/fastclick',
 		fastbutton: 		'libs/jquery.mobile.fastButtons',
 		jqmrouter: 			'libs/jquery.mobile.router-0.9.3.min',
 		// jqmobile: 			'libs/jquery.mobile-1.3.2.min',
-		jqmobile: 			'libs/jquery.mobile-1.4.3.min',
+		jqmobile: 			'libs/jquery.mobile-1.4.4.min',
 		lodash: 			'libs/lodash-1.2.1.min',
 		backbone: 			'libs/backbone-1.0.0.min',
 		marionette: 		'libs/backbone.marionette-1.0.3.min',
@@ -93,8 +94,17 @@ function loadCss(url) {
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 
+/*
 // loadCss ('js/libs/jquery.mobile-1.3.2.min.css');
 loadCss ('js/libs/my-custom-theme.min.css');
 loadCss ('js/libs/jquery.mobile.icons.min.css');
-loadCss ('js/libs/jquery.mobile.structure-1.4.3.min.css');
+loadCss ('js/libs/jquery.mobile.structure-1.4.4.min.css');
 loadCss ('js/libs/layouthacks.css');
+*/
+cssArray = [
+    "js/libs/my-custom-theme.min.css",
+	"js/libs/jquery.mobile.icons.min.css",
+	"js/libs/jquery.mobile.structure-1.4.4.min.css",
+	"js/libs/layouthacks.css"
+];
+cssArray.forEach(loadCss)

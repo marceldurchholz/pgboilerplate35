@@ -50,7 +50,7 @@ function (App, panelTmpl){
 				},				
 				template: function () {	
 					return '<h1>' + this.options.title + '</h1>' + 
-						'<a href="#panel_'+this.options.name+'" id="app-menu" data-role="button" class="ui-btn-left">Menu</a>';},
+						'<a href="#panel_'+this.options.name+'" id="app-menu" data-rel="#panel_'+this.options.name+'" data-role="button" class="ui-btn-left">Menu</a>';},
 			}))(opts);
 		};
 		
