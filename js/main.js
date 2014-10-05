@@ -2,18 +2,20 @@ var JQMM = JQMM || {};
 
 require.config({
 	baseUrl: './js/',
-	paths: {		
+	paths: {
 		text: 				'libs/require-text-2.1.2',
 		json:				'libs/require-json-0.3.0',
-		jquery: 			'libs/jquery-1.10.1.min',
+		// jquery: 			'libs/jquery-1.10.1.min',
+		jquery: 			'libs/jquery-1.11.1.min',
 		functions: 			'libs/functions',
 		jqmrouter: 			'libs/jquery.mobile.router-0.9.3.min',
-		jqmobile: 			'libs/jquery.mobile-1.3.2.min',
+		// jqmobile: 			'libs/jquery.mobile-1.3.2.min',
+		jqmobile: 			'libs/jquery.mobile-1.4.3.min',
 		lodash: 			'libs/lodash-1.2.1.min',
 		backbone: 			'libs/backbone-1.0.0.min',
 		marionette: 		'libs/backbone.marionette-1.0.3.min',
+		ios:				'libs/ios.min',
 		app_pre_jqm_init:	'app/pre_jqm_init',
-		
 		},
 		
 	shim: {	          
@@ -22,6 +24,9 @@ require.config({
 		},
 	    functions: {
 	    	deps: ['jqmrouter' ]
+	    },
+	    ios: {
+	    	deps: ['app_pre_jqm_init' ]
 	    },
 	    jqmrouter: {
 	    	deps: ['app_pre_jqm_init' ]
@@ -42,9 +47,7 @@ require.config({
 	    marionette: {
 	    	deps: ['backbone'],
 	        exports: 'Marionette'
-	    },
-	    
-	    
+	    }
 	}
 });
 
@@ -80,5 +83,8 @@ function loadCss(url) {
     document.getElementsByTagName("head")[0].appendChild(link);
 }
 
-loadCss ('js/libs/jquery.mobile-1.3.2.min.css');
+// loadCss ('js/libs/jquery.mobile-1.3.2.min.css');
+loadCss ('js/libs/my-custom-theme.min.css');
+loadCss ('js/libs/jquery.mobile.icons.min.css');
+loadCss ('js/libs/jquery.mobile.structure-1.4.3.min.css');
 loadCss ('js/libs/layouthacks.css');

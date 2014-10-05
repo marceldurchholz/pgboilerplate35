@@ -21,6 +21,12 @@
   var nativeScripts = [
     "phonegap.js"
   ]
+  var commonScripts = [
+	"checkMobileInit.js"
+  ]
+  var mainScripts = [
+	'<script type="text/javascript" data-main="js/main" src="js/libs/require-2.1.2.min.js"></script>'
+  ]
   var nativeCss = [
     "css/style_firefox.css"
   ]
@@ -34,10 +40,14 @@
   // alert('isNativeDevice: '+isNativeDevice);
   if (isNativeDevice==true) {
     // alert('device-loader >> loading scripts via: if (isNativeDevice==true) {...');
-	nativeScripts.forEach(loadScript)
+	nativeScripts.forEach(loadScript);
+	mainScripts.forEach(mainScript);
+	// commonScripts.forEach(loadScript);
 	// nativeCss.forEach(loadCss)
   }
   if (isNativeDevice==false) {
+	// commonScripts.forEach(loadScript);
+	mainScripts.forEach(mainScript);
     // alert('device-loader.js >> loading scripts via: if (isNativeDevice==false) {...');
 	// desktopScripts.forEach(loadScript)
   }
@@ -47,6 +57,10 @@
  
   function loadScript(src) {
     var line = '<script type="text/javascript" src="'+src+'"></script>';
+    document.writeln(line);
+  }
+  function mainScript(src) {
+    var line = src;
     document.writeln(line);
   }
   function loadCss(src) {
