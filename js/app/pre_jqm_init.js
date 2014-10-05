@@ -11,14 +11,29 @@ function correctPageSize() {
 	var ios_ws = iOS_getWindowSize();
 	var ios_vs = iOS_getViewportSize();
 	var ios_ps = iOS_getPageSize();
+	console.log(ios_nws);
 	console.log(ios_ws);
 	console.log(ios_vs);
 	console.log(ios_ps);
 }
 
+function hideActiveFooter() {
+	// var activePage = $.mobile.pageContainer.pagecontainer("getActivePage");
+	// console.log(activePage);
+	// var activePageId = $(activePage)[0].id;
+	// console.log(activePageId);
+	// $(activePage).find('#'+activePageId+'_footer').hide();
+	// activePage.find('#'+activePageId+'_footer').hide();
+	// footer_landing
+	var footer = $('.ui-page-active').find('.ui-footer').css('visibility','hidden');
+	// $(footer).css('visibility','hidden');
+}
+function showActiveFooter() {
+	var footer = $('.ui-page-active').find('.ui-footer').css('visibility','visible');
+}
+
 window.deviceReadyDeferred = $.Deferred();
 window.jqmReadyDeferred = $.Deferred();
-
 function doWhenBothFrameworksLoaded() {
 	alert('doWhenBothFrameworksLoaded');
 	// TBD
@@ -29,7 +44,6 @@ function isOpen_func(e) {
 	console.log('isOpen_func');
 	console.log(e);
 }
-
 function keyboardWillShow_func(e) {
 	console.log('keyboardWillShow');
 	console.log(e);
@@ -37,6 +51,7 @@ function keyboardWillShow_func(e) {
 	console.log(is_open);
 	var height = Keyboard.getHeight();
 	console.log(height);
+	hideActiveFooter();
 }
 function keyboardDidShow_func(e) {
 	console.log('keyboardDidShow');
@@ -45,7 +60,9 @@ function keyboardDidShow_func(e) {
 	console.log(is_open);
 	var height = Keyboard.getHeight();
 	console.log(height);
+	correctPageSize();
 	iOS_disableScrolling();
+	correctPageSize();
 }
 function keyboardWillHide_func(e) {
 	console.log('keyboardWillHide');
@@ -54,6 +71,7 @@ function keyboardWillHide_func(e) {
 	console.log(is_open);
 	var height = Keyboard.getHeight();
 	console.log(height);
+	showActiveFooter();
 }
 function keyboardDidHide_func(e) {
 	console.log('keyboardDidHide');
@@ -62,7 +80,9 @@ function keyboardDidHide_func(e) {
 	console.log(is_open);
 	var height = Keyboard.getHeight();
 	console.log(height);
+	correctPageSize();
 	iOS_enableScrolling();
+	correctPageSize();
 }
 
 // $(document).ready(function() {
@@ -70,20 +90,18 @@ $( document ).one( "pageinit", function() {
     fastButtons.replace();
 });
 
-/*
 $( document ).bind( "pageshow", ".ui-page-active", function() {
 	console.log("bind pageshow");
-	// fastButtons.replace();
+	// hideActiveFooter();
+	// showActiveFooter();
+	correctPageSize();
 });
-*/
 
 $( document ).off( "mobileinit" ).on( "mobileinit", function() {
 	// Make your jQuery Mobile framework configuration changes here!
 	//console.log ('mobileinit')
 	$.support.cors = true;
 	$.mobile.allowCrossDomainPages = true;
-
-	console.log(correctPageSize);
 	
 	document.addEventListener('deviceready', function () {
 		//$(document.body).height(window.innerHeight);
