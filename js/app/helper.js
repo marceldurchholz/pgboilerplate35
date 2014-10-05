@@ -9,25 +9,26 @@ function (App, panelTmpl){
 				tagName: 'header', 
 				attributes: function() {
 					return {
-						'region_id': 				'panel',						
-						'id': 						'panel',
+						'region_id': 				'panel',
+						'id': 						'panel_'+this.options.name,
 						'data-role': 				'panel',
 					};
 				},
 				initialize: function () {
 					_.bindAll (this, "template");
 				},
-				template: function () {	return  _.template(panelTmpl, {});},
+				template: function () {	
+					console.log(this.options.name);
+					alert($.mobile.activePage.attr('id'));
+					return  _.template(panelTmpl, {});
+				},
 				events: {
 				'click a': function(e) {
 					if ($(e.currentTarget).attr('href') === '#'+ $.mobile.activePage.attr('id') ) {
-						$.mobile.activePage.find('[data-role=panel]').panel( "close");
-
+						$.mobile.activePage.find('[data-role=panel]').panel( "close" );
 					} 
-					//_showTargetPage ($(e.currentTarget).attr('target-page'));
 				},
-				}//events
-
+				}
 			}))(opts);
 		};
 		
@@ -49,7 +50,7 @@ function (App, panelTmpl){
 				},				
 				template: function () {	
 					return '<h1>' + this.options.title + '</h1>' + 
-						'<a href="#panel" id="app-menu" data-role="button" class="ui-btn-left">Menu</a>';},
+						'<a href="#panel_'+this.options.name+'" id="app-menu" data-role="button" class="ui-btn-left">Menu</a>';},
 			}))(opts);
 		};
 		

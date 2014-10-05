@@ -8,13 +8,14 @@ require.config({
 		// jquery: 			'libs/jquery-1.10.1.min',
 		jquery: 			'libs/jquery-1.11.1.min',
 		functions: 			'libs/functions',
+		ios: 				'libs/ios.min',
+		fastbuttons: 		'libs/jquery.mobile.fastButtons',
 		jqmrouter: 			'libs/jquery.mobile.router-0.9.3.min',
 		// jqmobile: 			'libs/jquery.mobile-1.3.2.min',
 		jqmobile: 			'libs/jquery.mobile-1.4.3.min',
 		lodash: 			'libs/lodash-1.2.1.min',
 		backbone: 			'libs/backbone-1.0.0.min',
 		marionette: 		'libs/backbone.marionette-1.0.3.min',
-		ios:				'libs/ios.min',
 		app_pre_jqm_init:	'app/pre_jqm_init',
 		},
 		
@@ -55,8 +56,10 @@ require.config({
 //must load 'functions' at the very beginning
 define(['functions'], 
 	function (functions) {
-		require(['jquery', 'jqmrouter', 'app_pre_jqm_init', 'jqmobile', 'lodash', 'backbone', 'marionette'], 
-			function () {		         
+		require(['jquery', 'app_pre_jqm_init', 'ios', 'fastbuttons', 'jqmrouter', 'jqmobile', 'lodash', 'backbone', 'marionette'], 
+			function () {
+				window.jqmReadyDeferred.resolve();
+				// eventually... build in here a timeout for native device check (both deferred via "then")
 				require(['app/app', 'app/routing', 'app/page_landing', 'app/page_about', 'app/page_videos', 'app/page_message', 'app/page_login', 'app/helper'], 
 					function () {
 						$(function () {

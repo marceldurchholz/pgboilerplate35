@@ -38,7 +38,7 @@
     <gap:plugin name="org.apache.cordova.media" />
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.vibration" />
-	<gap:plugin name="com.wizardlogic.cordova.ios_keyboard" />
+	<gap:plugin name="com.wizardlogic.cordova.ios_keyboard" version="2.0.0" />
 	
     <!-- universal preferences -->
     <preference name="phonegap-version"           value="3.5.0" />         

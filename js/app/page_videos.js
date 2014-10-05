@@ -7,7 +7,7 @@ function (App, Helper, contentTmpl){
 		var _pageName = 'videos';		
 		var _pageLayout = Helper.newPageLayout({
 			name:_pageName,
-			panelView: 		Helper.newPanelView(),			
+			panelView: 		Helper.newPanelView({name:_pageName}),			
 			headerView: 	Helper.newHeaderView({name:_pageName, title:'Welcome to the Videos Page'}),
 			contentView: 	Helper.newContentView({name:_pageName, template: _.template(contentTmpl, {}) }),
 			footerView: 	Helper.newFooterView({name:_pageName, title:'Videos Footer'})

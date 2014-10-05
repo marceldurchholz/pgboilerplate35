@@ -27,18 +27,29 @@ $.when(window.deviceReadyDeferred, window.jqmReadyDeferred).then(doWhenBothFrame
 
 function keyboardWillShow(e) {
 	console.log('keyboardWillShow');
+	console.log(e);
 }
 function keyboardDidShow(e) {
 	console.log('keyboardDidShow');
+	console.log(e);
+	iOS_disableScrolling();
 }
 function keyboardWillHide(e) {
 	console.log('keyboardWillHide');
+	console.log(e);
 }
 function keyboardDidHide(e) {
 	console.log('keyboardDidHide');
+	console.log(e);
+	iOS_enableScrolling();
 }
 
-$( document ).bind( "mobileinit", function() {
+$( document ).off("pageshow").on( "pageshow", function() {
+	console.log("bind pageshow");
+	// fastButtons.replace();
+});
+
+$( document ).off( "mobileinit" ).on( "mobileinit", function() {
 	// Make your jQuery Mobile framework configuration changes here!
 	//console.log ('mobileinit')
 	$.support.cors = true;
