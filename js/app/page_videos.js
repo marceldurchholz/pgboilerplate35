@@ -1,5 +1,5 @@
 define(['app/app', 'app/helper', 'text!../../templates/app/content.videos.html'],
-function (App, Helper, contentTmpl){
+function (App, Helper, videosTmpl){
 
 	App.Page_Videos = (function(){
 		var Page_Videos = {};
@@ -9,7 +9,7 @@ function (App, Helper, contentTmpl){
 			name:_pageName,
 			panelView: 		Helper.newPanelView({name:_pageName}),			
 			headerView: 	Helper.newHeaderView({name:_pageName, title:'Welcome to the Videos Page'}),
-			contentView: 	Helper.newContentView({name:_pageName, template: _.template(contentTmpl, {}) }),
+			contentView: 	Helper.newContentView({name:_pageName, template: _.template(videosTmpl, {}) }),
 			footerView: 	Helper.newFooterView({name:_pageName, title:'Videos Footer'})
 		});
 							

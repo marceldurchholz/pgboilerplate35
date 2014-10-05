@@ -9,7 +9,7 @@ require.config({
 		jquery: 			'libs/jquery-1.11.1.min',
 		functions: 			'libs/functions',
 		ios: 				'libs/ios.min',
-		fastbuttons: 		'libs/jquery.mobile.fastButtons',
+		fastclick: 			'libs/jQuery.fastClick',
 		jqmrouter: 			'libs/jquery.mobile.router-0.9.3.min',
 		// jqmobile: 			'libs/jquery.mobile-1.3.2.min',
 		jqmobile: 			'libs/jquery.mobile-1.4.3.min',
@@ -30,6 +30,9 @@ require.config({
 	    	deps: ['app_pre_jqm_init' ]
 	    },
 	    jqmrouter: {
+	    	deps: ['app_pre_jqm_init' ]
+	    },
+	    fastclick: {
 	    	deps: ['app_pre_jqm_init' ]
 	    },
 	    app_pre_jqm_init: {
@@ -56,7 +59,7 @@ require.config({
 //must load 'functions' at the very beginning
 define(['functions'], 
 	function (functions) {
-		require(['jquery', 'app_pre_jqm_init', 'ios', 'fastbuttons', 'jqmrouter', 'jqmobile', 'lodash', 'backbone', 'marionette'], 
+		require(['jquery', 'app_pre_jqm_init', 'ios', 'fastclick', 'jqmrouter', 'jqmobile', 'lodash', 'backbone', 'marionette'], 
 			function () {
 				window.jqmReadyDeferred.resolve();
 				// eventually... build in here a timeout for native device check (both deferred via "then")

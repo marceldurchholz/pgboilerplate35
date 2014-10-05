@@ -19,13 +19,15 @@ var fastButtons = {
 	
 		// reset them as vclick events
 		for (var i in clickEvents) {
+			console.log(clickEvents[i]);
 			$(document).on('vclick', clickEvents[i].handler);
 		}
 	}
 };
 
 // Call fastbuttons and replace all click events with vclick
-
+/*
 $(document).ready(function() {
     fastButtons.replace();
 });
+*/

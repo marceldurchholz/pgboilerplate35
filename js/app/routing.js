@@ -33,7 +33,7 @@ define(['app/app'], function (App){
 		
 		Routing.changePage = function (page,opts) {
 			opts = opts || {};
-			_.extend(opts, { transition: "slide", changeHash: false});
+			_.extend(opts, { changeHash: false});
 			$.mobile.changePage(page,  opts );
 		}
 		

@@ -44,7 +44,12 @@ function keyboardDidHide(e) {
 	iOS_enableScrolling();
 }
 
-$( document ).off("pageshow").on( "pageshow", function() {
+// $(document).ready(function() {
+$( document ).off("pageinit").one( "pageinit", function() {
+    // fastButtons.replace();
+});
+
+$( document ).bind( "pageshow", ".ui-page-active", function() {
 	console.log("bind pageshow");
 	// fastButtons.replace();
 });
