@@ -18,8 +18,8 @@ function (App, panelTmpl){
 					_.bindAll (this, "template");
 				},
 				template: function () {	
-					console.log(this.options.name);
-					alert($.mobile.activePage.attr('id'));
+					// console.log(this.options.name);
+					// alert($.mobile.activePage.attr('id'));
 					return  _.template(panelTmpl, {});
 				},
 				events: {
