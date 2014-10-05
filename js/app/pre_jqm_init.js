@@ -65,12 +65,12 @@ function keyboardDidHide_func(e) {
 	iOS_enableScrolling();
 }
 
-/*
 // $(document).ready(function() {
-$( document ).off("pageinit").one( "pageinit", function() {
-    // fastButtons.replace();
+$( document ).one( "pageinit", function() {
+    fastButtons.replace();
 });
 
+/*
 $( document ).bind( "pageshow", ".ui-page-active", function() {
 	console.log("bind pageshow");
 	// fastButtons.replace();
@@ -93,13 +93,13 @@ $( document ).off( "mobileinit" ).on( "mobileinit", function() {
 	}, false);
 	
 	if (isMobile.any()) {
-		alert('hurray... it is a mobile device');
+		// alert('hurray... it is a mobile device');
 		StatusBar.overlaysWebView(false);
 		StatusBar.styleLightContent();
 		StatusBar.show();
 		
-		$('body').off('keyboardWillShow', keyboardWillShow_func).on('keyboardWillShow', keyboardWillShow_func);
 		$('body').off('isOpen', isOpen_func).on('isOpen', isOpen_func);
+		$('body').off('keyboardWillShow', keyboardWillShow_func).on('keyboardWillShow', keyboardWillShow_func);
 		$('body').off('keyboardDidShow', keyboardDidShow_func).on('keyboardDidShow', keyboardDidShow_func);
 		$('body').off('keyboardWillHide', keyboardWillHide_func).on('keyboardWillHide', keyboardWillHide_func);
 		$('body').off('keyboardDidHide', keyboardDidHide_func).on('keyboardDidHide', keyboardDidHide_func);

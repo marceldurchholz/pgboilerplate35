@@ -37,7 +37,7 @@ require.config({
 	    	deps: ['app_pre_jqm_init' ]
 	    },
 		fastbutton: {
-			deps: ['jqmobile']
+			deps: ['jquery']
 		},
 	    app_pre_jqm_init: {
 	    	deps: ['jquery' ]
